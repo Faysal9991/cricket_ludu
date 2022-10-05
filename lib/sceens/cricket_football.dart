@@ -176,6 +176,7 @@ class _CricketFootballScreenState extends State<CricketFootballScreen> {
                   height: height*0.04,
                   child: ElevatedButton(onPressed:game.slotoneusers.contains(profileModel.uid)||game.slottwousers.contains(profileModel.uid)?null: (){
                     TextEditingController selected = TextEditingController();
+                    TextEditingController amount = TextEditingController();
 
                                         showMaterialModalBottomSheet(
                                               expand: true,
@@ -196,13 +197,26 @@ class _CricketFootballScreenState extends State<CricketFootballScreen> {
                                                          Padding(
                                                            padding: const EdgeInsets.all(8.0),
                                                            child: Container(
+                                                             color: Colors.white,
+                                                             child: TextField(
+                                                               controller: amount,
+                                                               keyboardType: TextInputType.number,
+                                                               decoration: InputDecoration(
+                                                                 hintText: "Enter your bet",
+                                                                 border: OutlineInputBorder(
+
+                                                                 )
+                                                               ),
+                                                             ),
+                                                           )
+                                                           /*Container(
 
                                                              color: Colors.white,
                                                              width: width*4,
                                                              height: height*0.04,
                                                              child: Center(child: Text("${game.entryFee}")),
 
-                                                           ),
+                                                           ),*/
                                                          ),
                                                          Text("Potential wingings \$50.9",style: GoogleFonts.lato(color: Colors.white),),
                                                          Padding(
@@ -255,8 +269,13 @@ class _CricketFootballScreenState extends State<CricketFootballScreen> {
                                                            ),
                                                          ),
                                                          ElevatedButton(onPressed: profileModel.totalBalance!<game.entryFee!?null: ()async{
+                                                           if(int.parse(amount.text.trim())>profileModel.totalBalance!){
 
-                                                           await fireBase.joinGameCricket(game, profileModel, selected.text.trim()=="1"?1:2);
+                                                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Amount exceeds balance")));
+                                                             return;
+
+                                                           }
+                                                           await fireBase.joinGameCricket(game, profileModel, selected.text.trim()=="1"?1:2, amount.text.trim());
                                                            Navigator.of(context).pop();
                                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Bet added')));
                                                          }, child: Text("Submit and play")),

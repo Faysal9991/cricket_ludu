@@ -56,8 +56,8 @@ class _LuduScreenState extends State<LuduScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          FutureBuilder<ProfileModel>(
-                            future: fireBase.myProfile(),
+                          StreamBuilder<ProfileModel>(
+                            stream: fireBase.myProfileStream(),
                             builder: (context, snap) {
                               return snap.hasData?Text(
                                 "${snap.data!.totalBalance}",
@@ -102,7 +102,7 @@ class _LuduScreenState extends State<LuduScreen> {
                                          matchStart: "${game.start}",
                                          matchEnd: "${game.end}",
                                          bordType: "${game.boardType}",
-                                         joinButtun: game.slotoneusers.contains(profileModel.uid)||game.slottwousers.contains(profileModel.uid)?null:()async{
+                                         joinButtun: game.slotoneusers.contains(profileModel.uid)||game.slottwousers.contains(profileModel.uid)||(game.slotonecapacity!<=game.slotoneusers.length&&game.slottwocapacity!<=game.slottwousers.length)?null:()async{
                                           if(profileModel.totalBalance!>=game.entryFee!){
 
                                             await fireBase.joinGame(game, profileModel);

@@ -34,7 +34,7 @@ class FireBase{
   Future<bool> joinGame(GameModel gameModel, ProfileModel profileModel)async{
     if(gameModel.slotonecapacity!>gameModel.slotoneusers.length){
       gameModel.slotoneusers.add(profileModel.uid!);
-    }else{
+    }else if(gameModel.slottwocapacity!>gameModel.slottwousers.length){
       gameModel.slottwousers.add(profileModel.uid!);
     }
     profileModel.totalBalance=profileModel.totalBalance!-gameModel.entryFee!;
@@ -52,14 +52,14 @@ class FireBase{
     return y;
   }
 
-  Future<bool> joinGameCricket(GameModel gameModel, ProfileModel profileModel, int serial)async{
+  Future<bool> joinGameCricket(GameModel gameModel, ProfileModel profileModel, int serial, String amount)async{
     if(serial==1){
       gameModel.slotoneusers.add(profileModel.uid!);
     }else{
       gameModel.slottwousers.add(profileModel.uid!);
     }
 
-    profileModel.totalBalance=profileModel.totalBalance!-gameModel.entryFee!;
+    profileModel.totalBalance=profileModel.totalBalance!-int.parse(amount);
     final x = await store.collection("game").doc(gameModel.uid).update(gameModel.toJson()).onError((error, stackTrace) => false);
     final y = await store.collection("profile").doc(profileModel.uid).update(profileModel.toJson()).onError((error, stackTrace) => false);
     return true;
