@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "D:\\android_development\\project\\flutter\\company\\meektech\\faysal\\cricket_ludu\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/res/values-night/styles.xml",
+                    "source": "D:\\android_development\\project\\flutter\\company\\meektech\\faysal\\cricket_ludu\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
-                        "startOffsets": "172,817",
+                        "startOffsets": "175,831",
                         "endLines": "7,16",
                         "endColumns": "12,12",
-                        "endOffsets": "475,981"
+                        "endOffsets": "482,997"
                     },
                     "to": {
                         "startLines": "2,7",

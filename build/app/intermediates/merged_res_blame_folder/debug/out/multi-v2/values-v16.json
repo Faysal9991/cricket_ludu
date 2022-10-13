@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "D:\\android_development\\project\\flutter\\company\\meektech\\faysal\\cricket_ludu\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/macbookair/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\Mehedi Hasan Shuvo\\.gradle\\caches\\transforms-3\\b11c0e2c212c747cb4bcf29314469768\\transformed\\core-1.6.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

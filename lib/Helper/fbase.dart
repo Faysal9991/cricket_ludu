@@ -11,118 +11,170 @@ import 'package:firebase_storage/firebase_storage.dart';
 import '../models/mainadminmodel.dart';
 import '../models/rechargemodel.dart';
 
-class FireBase{
+class FireBase {
   final auth = FirebaseAuth.instance;
   final store = FirebaseFirestore.instance;
   final cu = FirebaseAuth.instance.currentUser;
   final storage = FirebaseStorage.instance;
 
-  Future<UserCredential> signUpWithEmailAndPassword(String mail, String password, String name)async{
-    final x = await auth.createUserWithEmailAndPassword(email: mail, password: password).then((value) async{
-      await store.collection("profile").doc(value.user?.uid).set(ProfileModel(uid: value.user?.uid, mail: value.user?.email, totalBalance: 0, name: name).toJson());
+  Future<UserCredential> signUpWithEmailAndPassword(String mail, String password, String name) async {
+    final x = await auth.createUserWithEmailAndPassword(email: mail, password: password).then((value) async {
+      await store
+          .collection("profile")
+          .doc(value.user?.uid)
+          .set(ProfileModel(uid: value.user?.uid, mail: value.user?.email, totalBalance: 0, name: name).toJson());
       return value;
     });
     return x;
   }
-  Future<UserCredential> signinwithemailandpassword(String mail, String password)async{
+
+  Future<UserCredential> signinwithemailandpassword(String mail, String password) async {
     final x = await auth.signInWithEmailAndPassword(email: mail, password: password);
     return x;
   }
-  logout()async{
+
+  logout() async {
     await auth.signOut();
   }
 
-  Future<bool> joinGame(GameModel gameModel, ProfileModel profileModel)async{
-    if(gameModel.slotonecapacity!>gameModel.slotoneusers.length){
+  Future<bool> joinGame(GameModel gameModel, ProfileModel profileModel) async {
+    if (gameModel.slotonecapacity! > gameModel.slotoneusers.length) {
       gameModel.slotoneusers.add(profileModel.uid!);
-    }else if(gameModel.slottwocapacity!>gameModel.slottwousers.length){
+    } else if (gameModel.slottwocapacity! > gameModel.slottwousers.length) {
       gameModel.slottwousers.add(profileModel.uid!);
     }
-    profileModel.totalBalance=profileModel.totalBalance!-gameModel.entryFee!;
-     final x = await store.collection("game").doc(gameModel.uid).update(gameModel.toJson()).onError((error, stackTrace) => false);
-     final y = await store.collection("profile").doc(profileModel.uid).update(profileModel.toJson()).onError((error, stackTrace) => false);
-     return true;
-
-
-
-  }
-  Future<bool> joinCricketFootballGame(CricketFootball cricket_football, ProfileModel profileModel)async{
-
-    // profileModel.totalBalance=profileModel.totalBalance!-gameModel.entryFee!;
-    final cricket = await store.collection("cricket_football").doc(cricket_football.uid).update(cricket_football.toJson()).onError((error, stackTrace) => false);
-    final profile = await store.collection("profile").doc(profileModel.uid).update(profileModel.toJson()).onError((error, stackTrace) => false);
+    profileModel.totalBalance = profileModel.totalBalance! - gameModel.entryFee!;
+    final x = await store.collection("game").doc(gameModel.uid).update(gameModel.toJson()).onError((error, stackTrace) => false);
+    final y = await store.collection("profile").doc(profileModel.uid).update(profileModel.toJson()).onError((error, stackTrace) => false);
     return true;
   }
 
-  Future<String> uploadImage(File imageFile, String fileName) async{
+  Future<String> uploadImage(File imageFile, String fileName) async {
     final x = await storage.ref("profile/$fileName").putFile(imageFile);
     final y = await x.ref.getDownloadURL();
     return y;
   }
 
-  Future<bool> joinGameCricket(GameModel gameModel, ProfileModel profileModel, int serial, String amount)async{
-    if(serial==1){
+  Future<bool> joinGameCricket(GameModel gameModel, ProfileModel profileModel, int serial, String amount) async {
+    if (serial == 1) {
       gameModel.slotoneusers.add(profileModel.uid!);
-    }else{
+    } else {
       gameModel.slottwousers.add(profileModel.uid!);
     }
 
-    profileModel.totalBalance=profileModel.totalBalance!-int.parse(amount);
+    profileModel.totalBalance = profileModel.totalBalance! - int.parse(amount);
     final x = await store.collection("game").doc(gameModel.uid).update(gameModel.toJson()).onError((error, stackTrace) => false);
     final y = await store.collection("profile").doc(profileModel.uid).update(profileModel.toJson()).onError((error, stackTrace) => false);
     return true;
-
-
-
   }
 
-  Future<bool> rechargeRequest(RechargeModel rechargeModel)async{
+  Future<bool> rechargeRequest(RechargeModel rechargeModel) async {
     final x = await store.collection("recharge").doc().set(rechargeModel.toJson()).onError((error, stackTrace) => false);
     return true;
   }
 
-  Future<bool> withdrawRequest(WithdrawModel withdrawModel)async{
+  Future<bool> withdrawRequest(WithdrawModel withdrawModel) async {
     final x = await store.collection("withdraw").doc().set(withdrawModel.toJson()).onError((error, stackTrace) => false);
     return true;
   }
-  Stream<List<GameModel>> allLudo(){
+
+  Stream<List<GameModel>> allLudo() {
     return store.collection("game").where("boardType", isEqualTo: "Ludo").snapshots().map((event) => event.docs.map((e) {
-      GameModel gameModel = GameModel.fromJson(e.data());
-      gameModel.uid = e.id;
-      return gameModel;
-    }).toList());
+          GameModel gameModel = GameModel.fromJson(e.data());
+          gameModel.uid = e.id;
+          return gameModel;
+        }).toList());
   }
 
-
-  
-  Stream<List<GameModel>> allgames(){
+  Stream<List<GameModel>> allgames() {
     return store.collection("game").snapshots().map((event) => event.docs.map((e) {
-      GameModel gameModel = GameModel.fromJson(e.data());
-      gameModel.uid = e.id;
-      return gameModel;
-    }).toList());
+          GameModel gameModel = GameModel.fromJson(e.data());
+          gameModel.uid = e.id;
+          return gameModel;
+        }).toList());
   }
 
-  Stream<ProfileModel> myProfileStream(){
+  Stream<ProfileModel> myProfileStream() {
     return store.collection("profile").doc(auth.currentUser!.uid).snapshots().map((event) => ProfileModel.fromJson(event.data()!));
   }
 
-  Future<ProfileModel>myProfile()async{
+  Future<ProfileModel> myProfile() async {
     ProfileModel profileModel = ProfileModel();
     final x = await store.collection("profile").doc(auth.currentUser!.uid).get().then((value) {
       profileModel = ProfileModel.fromJson(value.data()!);
     });
 
     return profileModel;
-
   }
-  Stream<MainAdminModel> mainadmindatas(){
+
+  Stream<MainAdminModel> mainadmindatas() {
     return store.collection("mainadmin").doc("staticdata").snapshots().map((event) => MainAdminModel.fromJson(event.data()!));
   }
 
-  Future<bool>rechargeTobalance(String amount, String transactionId)async{
-    final x = await store.collection("recharges").doc().set(RechargeModel(uid: auth.currentUser!.uid, amount: amount, transactionId: transactionId).toJson()).onError((error, stackTrace) => false);
+  Future<bool> rechargeTobalance(String amount, String transactionId) async {
+    final x = await store
+        .collection("recharges")
+        .doc()
+        .set(RechargeModel(uid: auth.currentUser!.uid, amount: amount, transactionId: transactionId).toJson())
+        .onError((error, stackTrace) => false);
     return true;
   }
 
+  Future<bool> createCricketFootballGame(CricketFootballModel cricketFootballModel) async {
+    await store
+        .collection("cricket_football_match")
+        .doc(cricketFootballModel.matchID)
+        .set(cricketFootballModel.toJson())
+        .onError((error, stackTrace) => false);
+    return true;
+  }
+
+  Stream<List<CricketFootballModel>> allCricketFootball() {
+    return store.collection("cricket_football_match").snapshots().map((event) => event.docs.map((e) {
+          CricketFootballModel gameModel = CricketFootballModel.fromJson(e.data());
+          return gameModel;
+        }).toList());
+  }
+
+  Future<bool> joinCricketFootballGame(CricketFootballModel cricketFootball, ProfileModel profileModel, int amount) async {
+    await store
+        .collection("cricket_football_match")
+        .doc(cricketFootball.matchID)
+        .update(cricketFootball.toJson())
+        .onError((error, stackTrace) => false);
+
+    profileModel.totalBalance = profileModel.totalBalance! - amount;
+    await store.collection("profile").doc(profileModel.uid).update(profileModel.toJson()).onError((error, stackTrace) => false);
+    return true;
+  }
+
+  Future<bool> updateGameStatus(CricketFootballModel cricketFootball) async {
+    await store
+        .collection("cricket_football_match")
+        .doc(cricketFootball.matchID)
+        .update(cricketFootball.toJson())
+        .onError((error, stackTrace) => false);
+
+    return true;
+  }
+
+  Future<bool> addMoneyAfterBeatFinishedCricket(String userID, int amount) async {
+    getUserByID(userID.replaceRange(0, 6, "")).then((value) async {
+      ProfileModel p = value;
+      p.totalBalance = p.totalBalance! + amount;
+      print(p.toJson());
+      await store.collection("profile").doc(p.uid).update(p.toJson()).onError((error, stackTrace) => false);
+    });
+
+    return true;
+  }
+
+  Future<ProfileModel> getUserByID(String userID) async {
+    ProfileModel profileModel = ProfileModel();
+    await store.collection("profile").doc(userID).get().then((value) {
+      profileModel = ProfileModel.fromJson(value.data()!);
+    });
+
+    return profileModel;
+  }
 }

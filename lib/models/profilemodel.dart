@@ -1,56 +1,39 @@
-class ProfileModel{
+class ProfileModel {
   String? uid;
   String? name;
   String? mail;
-  double totalWin=0;
-  double totalLoss=0;
+  double totalWin = 0;
+  double totalLoss = 0;
   int? totalBalance;
 
   ProfileModel({this.uid, this.mail, this.totalBalance, this.name});
-  Map<String, dynamic>toJson()=>{
-    "uid":uid,
-    "mail":mail,
-    "name":name,
-    "totalWin":totalWin,
-  "totalLoss":totalLoss,
-    "totalBalance":totalBalance
-  };
 
-  ProfileModel.fromJson(Map<String,dynamic> json){
-    try{
+  Map<String, dynamic> toJson() =>
+      {"uid": uid, "mail": mail, "name": name, "totalWin": totalWin, "totalLoss": totalLoss, "totalBalance": totalBalance};
+
+  ProfileModel.fromJson(Map<String, dynamic> json) {
+    try {
       uid = json["uid"];
-    }catch(e){
+    } catch (e) {}
 
-    }
-
-    try{
+    try {
       mail = json["mail"];
-    }catch(e){
+    } catch (e) {}
 
-    }
+    try {
+      totalBalance = json["totalBalance"] ?? 0;
+    } catch (e) {}
 
-    try{
-      totalBalance = json["totalBalance"];
-    }catch(e){
-
-    }
-
-      try{
+    try {
       totalWin = json["totalWin"];
-      }catch(e){
+    } catch (e) {}
 
-      }
-
-      try{
+    try {
       totalLoss = json["totalLoss"];
-      }catch(e){
+    } catch (e) {}
 
-      }
-
-      try{
+    try {
       name = json["name"];
-      }catch(e){
-
-      }
+    } catch (e) {}
   }
 }

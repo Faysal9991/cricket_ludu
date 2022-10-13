@@ -1,23 +1,25 @@
 import 'package:beting_app/widget/login_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BetingCard extends StatelessWidget {
-  const BetingCard({
-    Key? key,
-    required this.height,
-    required this.width,
-    required this.matchName,
-    this.bordType,
-    this.matchDate,
-    required this.image,
-    required this.winngPrize,
-    required this.entryFee,
-    required this.matchType,
-    required this.matchStart,
-    required this.matchEnd,
-    required this.joinButtun
-  }) : super(key: key);
+  const BetingCard(
+      {Key? key,
+      required this.height,
+      required this.width,
+      required this.matchName,
+      this.bordType,
+      this.matchDate,
+      required this.image,
+      required this.winngPrize,
+      required this.entryFee,
+      required this.matchType,
+      required this.matchStart,
+      required this.matchEnd,
+      required this.joinButtun,
+      required this.roomID})
+      : super(key: key);
 
   final double height;
   final double width;
@@ -30,22 +32,17 @@ class BetingCard extends StatelessWidget {
   final String matchStart;
   final String matchEnd;
   final String? matchDate;
+  final String? roomID;
   final VoidCallback? joinButtun;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height * 0.25,
       width: width,
-      decoration: BoxDecoration(
-          color: const Color(0xffEBFCED),
-          borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(color: const Color(0xffEBFCED), borderRadius: BorderRadius.circular(8)),
       child: Row(
         children: [
-          SizedBox(
-              height: height * 0.1,
-              width: width*0.17,
-               child: Image.network(image)),
+          SizedBox(height: height * 0.1, width: width * 0.17, child: Image.network(image)),
           SizedBox(
             width: width * 0.01,
           ),
@@ -56,16 +53,13 @@ class BetingCard extends StatelessWidget {
                 padding: EdgeInsets.only(left: width * 0.1, top: height * 0.02),
                 child: Text(
                   matchName,
-                  style: GoogleFonts.ebGaramond(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: const Color(0xff469B4D)),
+                  style: GoogleFonts.ebGaramond(fontWeight: FontWeight.bold, fontSize: 18, color: const Color(0xff469B4D)),
                 ),
               ),
-              Text("matchDate",style: GoogleFonts.lato(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 10,
-                      color:Colors.black),),
+              Text(
+                "matchDate",
+                style: GoogleFonts.lato(fontWeight: FontWeight.w400, fontSize: 10, color: Colors.black),
+              ),
               Row(
                 children: [
                   Column(
@@ -73,8 +67,7 @@ class BetingCard extends StatelessWidget {
                     children: [
                       Text(
                         "Wining prize",
-                        style: GoogleFonts.lato(
-                            color: Colors.black, fontWeight: FontWeight.w700),
+                        style: GoogleFonts.lato(color: Colors.black, fontWeight: FontWeight.w700),
                       ),
                       Text(
                         winngPrize,
@@ -85,8 +78,7 @@ class BetingCard extends StatelessWidget {
                       ),
                       Text(
                         "Bord Type",
-                        style: GoogleFonts.lato(
-                            color: Colors.black, fontWeight: FontWeight.w700),
+                        style: GoogleFonts.lato(color: Colors.black, fontWeight: FontWeight.w700),
                       ),
                       Text(
                         bordType!,
@@ -105,8 +97,7 @@ class BetingCard extends StatelessWidget {
                     children: [
                       Text(
                         "Entre Fee",
-                        style: GoogleFonts.lato(
-                            color: Colors.black, fontWeight: FontWeight.w700),
+                        style: GoogleFonts.lato(color: Colors.black, fontWeight: FontWeight.w700),
                       ),
                       Text(
                         entryFee,
@@ -117,8 +108,7 @@ class BetingCard extends StatelessWidget {
                       ),
                       Text(
                         "Match Type",
-                        style: GoogleFonts.lato(
-                            color: Colors.black, fontWeight: FontWeight.w700),
+                        style: GoogleFonts.lato(color: Colors.black, fontWeight: FontWeight.w700),
                       ),
                       Text(
                         matchType,
@@ -135,7 +125,7 @@ class BetingCard extends StatelessWidget {
                       children: [
                         LoginWidget(
                           h: height * 0.06,
-                        w: width*0.25,
+                          w: width * 0.25,
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -149,14 +139,17 @@ class BetingCard extends StatelessWidget {
                                     fontSize: 11,
                                   ),
                                 ),
-                                Text(matchStart,style: GoogleFonts.lato( fontSize: 11,color: Colors.black),)
+                                Text(
+                                  matchStart,
+                                  style: GoogleFonts.lato(fontSize: 11, color: Colors.black),
+                                )
                               ],
                             ),
                           ),
                         ),
                         LoginWidget(
                           h: height * 0.06,
-                             w: width*0.25,
+                          w: width * 0.25,
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -170,7 +163,7 @@ class BetingCard extends StatelessWidget {
                                     fontSize: 11,
                                   ),
                                 ),
-                                Text(matchEnd,style: GoogleFonts.lato( fontSize: 11,color: Colors.black))
+                                Text(matchEnd, style: GoogleFonts.lato(fontSize: 11, color: Colors.black))
                               ],
                             ),
                           ),
@@ -185,12 +178,20 @@ class BetingCard extends StatelessWidget {
                   SizedBox(
                       height: height * 0.04,
                       width: width * 0.6,
-                      child:
-                          ElevatedButton(onPressed:joinButtun, child:  Text(joinButtun==null?"Slot full":"Join now"))),
-                  TextButton(onPressed: (){}, child: Text("Room ID"))
+                      child: ElevatedButton(onPressed: joinButtun, child: Text(joinButtun == null ? "Slot full" : "Join now"))),
+                  TextButton(
+                      onPressed: () {
+                        if (roomID!.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Please Wait..')));
+                        } else {
+                          Clipboard.setData(ClipboardData(text: roomID)).then((value) {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Copy to clipboard successfully')));
+                          });
+                        }
+                      },
+                      child: Text("Room ID"))
                 ],
               ),
-
             ],
           )
         ],

@@ -1,5 +1,5 @@
 import 'package:beting_app/Helper/fbase.dart';
-import 'package:beting_app/sceens/cricket_football.dart';
+import 'package:beting_app/sceens/cricket_football_screen.dart';
 import 'package:beting_app/sceens/ludu.dart';
 import 'package:beting_app/sceens/screen_sort_uplod.dart';
 import 'package:flutter/material.dart';

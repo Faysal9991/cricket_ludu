@@ -1,9 +1,9 @@
-#Wed Oct 05 13:55:34 BDT 2022
-base.2=/Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/app/intermediates/dex/debug/mergeDexDebug/classes3.dex
+#Fri Oct 14 02:04:54 BDT 2022
+base.2=D\:\\android_development\\project\\flutter\\company\\meektech\\faysal\\cricket_ludu\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
-base.1=/Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
+base.1=D\:\\android_development\\project\\flutter\\company\\meektech\\faysal\\cricket_ludu\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.1=classes2.dex
-base.0=/Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+base.0=D\:\\android_development\\project\\flutter\\company\\meektech\\faysal\\cricket_ludu\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex

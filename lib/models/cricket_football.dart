@@ -1,63 +1,96 @@
+class CricketFootballModel {
+  String? matchID;
+  String? teamA;
+  String? teamB;
+  double? betRateA;
+  double? betRateB;
+  String? addedTime;
+  String? start;
+  String? end;
+  List<UserData>? teamAUsers = [];
+  List<UserData>? teamBUsers = [];
+  int? winTeamA;
+  int? beatStatus;
 
-class CricketFootball{
-  String? uid;
-  String? name;
-  String? country1;
-  String? country2;
-  int? value1;
-  int? value2;
+  CricketFootballModel(
+      {this.matchID,
+      this.teamA,
+      this.teamB,
+      this.teamAUsers,
+      this.teamBUsers,
+      this.addedTime,
+      this.betRateA,
+      this.betRateB,
+      this.start,
+      this.winTeamA,
+      this.beatStatus,
+      this.end});
 
-  CricketFootball ({
-
-    this.uid,
-    this.name,
-    this.country1,
-    this.country2,
-    this.value1,
-    this.value2,
-
-
-  });
-
-  Map<String, dynamic> toJson()=>{
-    "uid":uid,
-    "name":name,
-    "country1":country1,
-    "country2":country2,
-    "value1":value1,
-    "value2":value2,
-
-  };
-  CricketFootball.fromJson(Map<String, dynamic> json){
-    try {
-      uid = json["uid"];
-    } catch (e) {}
-    try {
-      name = json["name"];
-    } catch (e) {
-
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map["matchID"] = matchID;
+    map["teamAName"] = teamA;
+    map["teamBName"] = teamB;
+    map["betRateA"] = betRateA;
+    map["betRateB"] = betRateB;
+    map["startTime"] = start;
+    map["endTime"] = end;
+    map["winTeamA"] = winTeamA;
+    map["beatStatus"] = beatStatus;
+    map["postedTime"] = addedTime;
+    if (teamAUsers != null) {
+      map['teamAUsers'] = teamAUsers?.map((v) => v.toJson()).toList();
+    } else {
+      map['teamAUsers'] = [];
     }
-    try {
-      country1 = json["country1"];
-    } catch (e) {
-
+    if (teamBUsers != null) {
+      map['teamBUsers'] = teamBUsers?.map((v) => v.toJson()).toList();
+    } else {
+      map['teamBUsers'] = [];
     }
-    try {
-      country2 = json["country2"];
-    } catch (e) {
-
-    }
-    try {
-      value1 = json["value1"];
-    } catch (e) {
-
-    }
-    try {
-      value2 = json["value12"];
-    } catch (e) {
-
-    }
-
-
+    return map;
   }
+
+  CricketFootballModel.fromJson(Map<String, dynamic> json) {
+    matchID = json["matchID"] ?? "";
+    teamA = json["teamAName"] ?? "";
+    teamB = json["teamBName"] ?? "";
+    betRateA = json["betRateA"] ?? 0.0;
+    betRateB = json["betRateB"] ?? 0.0;
+    winTeamA = json["winTeamA"] ?? 0;
+    beatStatus = json["beatStatus"] ?? 0;
+    if (json["teamAUsers"] != null) {
+      teamAUsers = [];
+      json["teamAUsers"].forEach((e) {
+        teamAUsers!.add(UserData.fromJson(e));
+      });
+    } else {
+      teamAUsers = [];
+    }
+    if (json["teamBUsers"] != null) {
+      teamBUsers = [];
+      json["teamBUsers"].forEach((e) {
+        teamBUsers!.add(UserData.fromJson(e));
+      });
+    } else {
+      teamBUsers = [];
+    }
+    addedTime = json["postedTime"] ?? "";
+    start = json["startTime"] ?? "";
+    end = json["endTime"] ?? "";
   }
+}
+
+class UserData {
+  String? userID;
+  int? amount;
+
+  UserData({this.userID, this.amount});
+
+  Map<String, dynamic> toJson() => {"userID": userID, "amount": amount};
+
+  UserData.fromJson(Map<String, dynamic> json) {
+    userID = json["userID"] ?? "";
+    amount = json["amount"] ?? 0;
+  }
+}

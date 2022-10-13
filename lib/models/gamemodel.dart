@@ -1,8 +1,7 @@
-
-
-class GameModel{
+class GameModel {
   String? uid;
   String? name;
+  String? roomID;
   String? boardType;
   int? slotonecapacity;
   int? slottwocapacity;
@@ -11,122 +10,104 @@ class GameModel{
   List<String> slotoneusers = [];
   List<String> slottwousers = [];
   int? winner;
-  DateTime addedTime=DateTime.now();
+  DateTime addedTime = DateTime.now();
   DateTime? start;
   DateTime? end;
 
-  GameModel({
-    this.name,
-    this.boardType,
-    this.slotonecapacity,
-    this.slottwocapacity,
-    this.entryFee,
-    this.winingPrize,
-    this.winner,
-    this.start,
-    this.end});
+  GameModel(
+      {this.name,
+      this.boardType,
+      this.slotonecapacity,
+      this.slottwocapacity,
+      this.entryFee,
+      this.winingPrize,
+      this.roomID,
+      this.winner,
+      this.start,
+      this.end});
 
-  Map<String, dynamic> toJson()=>{
-    "uid":uid,
-    "name":name,
-    "boardType":boardType,
-    "slotonecapacity":slotonecapacity,
-    "slottwocapacity":slottwocapacity,
-    "entryFee":entryFee,
-    "winingPrize":winingPrize,
-    "slotoneusers":slotoneusers,
-    "slottwousers":slottwousers,
-    "winner":winner,
-    "addedTime":addedTime,
-    "start":start,
-    "end":end
-  };
+  Map<String, dynamic> toJson() => {
+        "uid": uid,
+        "name": name,
+        "boardType": boardType,
+        "slotonecapacity": slotonecapacity,
+        "slottwocapacity": slottwocapacity,
+        "entryFee": entryFee,
+        "winingPrize": winingPrize,
+        "slotoneusers": slotoneusers,
+        "roomID": roomID,
+        "slottwousers": slottwousers,
+        "winner": winner,
+        "addedTime": addedTime,
+        "start": start,
+        "end": end
+      };
 
-  GameModel.fromJson(Map<String, dynamic> json){
-    try{
+  GameModel.fromJson(Map<String, dynamic> json) {
+    try {
       uid = json["uid"];
-    }catch(e){
-    }
-    try{
+    } catch (e) {}
+    try {
       name = json["name"];
-    }catch(e){
-
-    }
-    try{
+    } catch (e) {}
+    try {
       boardType = json["boardType"];
-    }catch(e){
-
-    }
-    try{
+    } catch (e) {}
+    try {
+      roomID = json["roomID"]??"";
+    } catch (e) {}
+    try {
       slotonecapacity = json["slotonecapacity"];
-    }catch(e){
-
-    }
-    try{
+    } catch (e) {}
+    try {
       slottwocapacity = json["slottwocapacity"];
-    }catch(e){
-
-    }
-    try{
+    } catch (e) {}
+    try {
       entryFee = json["entryFee"];
-    }catch(e){
-
-    }
-    try{
+    } catch (e) {}
+    try {
       winingPrize = json["winingPrize"];
-    }catch(e){
-
-    }
-    try{
-      if(json["slotoneusers"]!=null){
+    } catch (e) {}
+    try {
+      if (json["slotoneusers"] != null) {
         slotoneusers = [];
-        json["slotoneusers"].forEach((e){
+        json["slotoneusers"].forEach((e) {
           slotoneusers.add(e);
         });
-      }else{
+      } else {
         slotoneusers = [];
       }
-    }catch(e){
-
-    }
-    try{
-      if(json["slottwousers"]!=null){
+    } catch (e) {}
+    try {
+      if (json["slottwousers"] != null) {
         slottwousers = [];
-        json["slottwousers"].forEach((e){
+        json["slottwousers"].forEach((e) {
           slottwousers.add(e);
         });
-      }else{
+      } else {
         slottwousers = [];
       }
-    }catch(e){
-
-    }
-    try{
+    } catch (e) {}
+    try {
       winner = json["winner"];
-    }catch(e){
-
-    }
-    try{
+    } catch (e) {}
+    try {
       //print(json["lastWithdraw"]);
-      addedTime = DateTime.fromMillisecondsSinceEpoch(json["addedTime"].seconds*1000);
-
-    }catch(e){
+      addedTime = DateTime.fromMillisecondsSinceEpoch(json["addedTime"].seconds * 1000);
+    } catch (e) {
       print("getting problem");
     }
-    try{
+    try {
       //print(json["lastWithdraw"]);
-      start = DateTime.fromMillisecondsSinceEpoch(json["start"].seconds*1000);
-
-    }catch(e){
+      start = DateTime.fromMillisecondsSinceEpoch(json["start"].seconds * 1000);
+    } catch (e) {
       print("getting problem");
     }
-    try{
+    try {
       //print(json["lastWithdraw"]);
-      end = DateTime.fromMillisecondsSinceEpoch(json["end"].seconds*1000);
-
-    }catch(e){
+      end = DateTime.fromMillisecondsSinceEpoch(json["end"].seconds * 1000);
+    } catch (e) {
       print("getting problem");
     }
   }
-
 }
