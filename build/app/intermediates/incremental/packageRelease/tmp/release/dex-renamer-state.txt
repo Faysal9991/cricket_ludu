@@ -1,0 +1,4 @@
+#Wed Oct 05 12:41:40 BDT 2022
+base.0=/Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

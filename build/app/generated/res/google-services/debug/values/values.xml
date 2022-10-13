@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">555974284451-fva9amv8d9tcshqnaneh1meh9c2r6i3h.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">555974284451</string>
+    <string name="google_api_key" translatable="false">AIzaSyCeyQGVfriiQd19Ndp5Uc4SbF2wO4gUK-E</string>
+    <string name="google_app_id" translatable="false">1:555974284451:android:e569657105f496e6789b16</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCeyQGVfriiQd19Ndp5Uc4SbF2wO4gUK-E</string>
+    <string name="google_storage_bucket" translatable="false">betting-a15c3.appspot.com</string>
+    <string name="project_id" translatable="false">betting-a15c3</string>
+</resources>

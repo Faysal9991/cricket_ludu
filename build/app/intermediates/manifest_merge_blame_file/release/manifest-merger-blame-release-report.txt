@@ -1,0 +1,259 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.beting_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-80
+11-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-77
+12
+13    <queries>
+13-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-17:15
+14        <intent>
+14-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-16:18
+15            <action android:name="android.intent.action.GET_CONTENT" />
+15-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-72
+15-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:13:21-69
+16
+17            <data android:mimeType="*/*" />
+17-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-44
+17-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:15:19-41
+18        </intent>
+19    </queries>
+20
+21    <uses-permission android:name="android.permission.INTERNET" />
+21-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:23:5-67
+21-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:23:22-64
+22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+22-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:24:5-79
+22-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:24:22-76
+23
+24    <application
+25        android:name="android.app.Application"
+25-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:5:9-42
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.6.0] /Users/macbookair/.gradle/caches/transforms-3/b11c0e2c212c747cb4bcf29314469768/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+27        android:icon="@mipmap/ic_launcher"
+27-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:6:9-43
+28        android:label="beting_app" >
+28-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:4:9-35
+29        <activity
+29-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:7:9-27:20
+30            android:name="com.example.beting_app.MainActivity"
+30-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:8:13-41
+31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+31-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:12:13-163
+32            android:exported="true"
+32-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:9:13-36
+33            android:hardwareAccelerated="true"
+33-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:13:13-47
+34            android:launchMode="singleTop"
+34-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:10:13-43
+35            android:theme="@style/LaunchTheme"
+35-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:11:13-47
+36            android:windowSoftInputMode="adjustResize" >
+36-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:14:13-55
+37
+38            <!--
+39                 Specifies an Android theme to apply to this Activity as soon as
+40                 the Android process has started. This theme is visible to the user
+41                 while the Flutter UI initializes. After that, this theme continues
+42                 to determine the Window background behind the Flutter UI.
+43            -->
+44            <meta-data
+44-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:19:13-22:17
+45                android:name="io.flutter.embedding.android.NormalTheme"
+45-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:20:15-70
+46                android:resource="@style/NormalTheme" />
+46-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:21:15-52
+47
+48            <intent-filter>
+48-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:23:13-26:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:24:17-68
+49-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:24:25-66
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:25:17-76
+51-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:25:27-74
+52            </intent-filter>
+53        </activity>
+54        <!--
+55             Don't delete the meta-data below.
+56             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+57        -->
+58        <meta-data
+58-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:30:9-32:33
+59            android:name="flutterEmbedding"
+59-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:31:13-44
+60            android:value="2" />
+60-->/Users/macbookair/Documents/ludu game/betting-ludo-cricket/android/app/src/main/AndroidManifest.xml:32:13-30
+61
+62        <service
+62-->[:firebase_auth] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-14:19
+63            android:name="com.google.firebase.components.ComponentDiscoveryService"
+63-->[:firebase_auth] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:10:18-89
+64            android:directBootAware="true"
+64-->[com.google.firebase:firebase-common:20.1.1] /Users/macbookair/.gradle/caches/transforms-3/60cb43b41827ac5833e6ffb9297cb895/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:35:13-43
+65            android:exported="false" >
+65-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:66:13-37
+66            <meta-data
+66-->[:firebase_auth] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+67                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+67-->[:firebase_auth] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+68                android:value="com.google.firebase.components.ComponentRegistrar" />
+68-->[:firebase_auth] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+69            <meta-data
+69-->[:firebase_storage] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+70                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+70-->[:firebase_storage] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-126
+71                android:value="com.google.firebase.components.ComponentRegistrar" />
+71-->[:firebase_storage] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+72            <meta-data
+72-->[:cloud_firestore] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+73                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+73-->[:cloud_firestore] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-134
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[:cloud_firestore] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+75            <meta-data
+75-->[:firebase_core] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+76                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+76-->[:firebase_core] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[:firebase_core] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+78            <meta-data
+78-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:67:13-69:85
+79                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+79-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:68:17-109
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:69:17-82
+81            <meta-data
+81-->[com.google.firebase:firebase-firestore:24.2.2] /Users/macbookair/.gradle/caches/transforms-3/4bf781aa974794557c35d99811f9380f/transformed/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:20:13-22:85
+82                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+82-->[com.google.firebase:firebase-firestore:24.2.2] /Users/macbookair/.gradle/caches/transforms-3/4bf781aa974794557c35d99811f9380f/transformed/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:21:17-111
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.firebase:firebase-firestore:24.2.2] /Users/macbookair/.gradle/caches/transforms-3/4bf781aa974794557c35d99811f9380f/transformed/jetified-firebase-firestore-24.2.2/AndroidManifest.xml:22:17-82
+84            <meta-data
+84-->[com.google.firebase:firebase-storage:20.0.1] /Users/macbookair/.gradle/caches/transforms-3/fad2e02abc9329b2cf7a188e7bf04068/transformed/jetified-firebase-storage-20.0.1/AndroidManifest.xml:33:13-35:85
+85                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+85-->[com.google.firebase:firebase-storage:20.0.1] /Users/macbookair/.gradle/caches/transforms-3/fad2e02abc9329b2cf7a188e7bf04068/transformed/jetified-firebase-storage-20.0.1/AndroidManifest.xml:34:17-107
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.firebase:firebase-storage:20.0.1] /Users/macbookair/.gradle/caches/transforms-3/fad2e02abc9329b2cf7a188e7bf04068/transformed/jetified-firebase-storage-20.0.1/AndroidManifest.xml:35:17-82
+87        </service>
+88
+89        <uses-library
+89-->[androidx.window:window:1.0.0-beta04] /Users/macbookair/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+90            android:name="androidx.window.extensions"
+90-->[androidx.window:window:1.0.0-beta04] /Users/macbookair/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+91            android:required="false" />
+91-->[androidx.window:window:1.0.0-beta04] /Users/macbookair/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+92        <uses-library
+92-->[androidx.window:window:1.0.0-beta04] /Users/macbookair/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+93            android:name="androidx.window.sidecar"
+93-->[androidx.window:window:1.0.0-beta04] /Users/macbookair/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+94            android:required="false" />
+94-->[androidx.window:window:1.0.0-beta04] /Users/macbookair/.gradle/caches/transforms-3/e1f53c96aa78f7b42431169b7cd59214/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+95
+96        <activity
+96-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:27:9-44:20
+97            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+97-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:28:13-80
+98            android:excludeFromRecents="true"
+98-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:29:13-46
+99            android:exported="true"
+99-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:30:13-36
+100            android:launchMode="singleTask"
+100-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:31:13-44
+101            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+101-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:32:13-72
+102            <intent-filter>
+102-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:33:13-43:29
+103                <action android:name="android.intent.action.VIEW" />
+103-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:17-69
+103-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:25-66
+104
+105                <category android:name="android.intent.category.DEFAULT" />
+105-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:17-76
+105-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:27-73
+106                <category android:name="android.intent.category.BROWSABLE" />
+106-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:17-78
+106-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:27-75
+107
+108                <data
+108-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-44
+109                    android:host="firebase.auth"
+110                    android:path="/"
+111                    android:scheme="genericidp" />
+112            </intent-filter>
+113        </activity>
+114        <activity
+114-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:45:9-62:20
+115            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+115-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:46:13-79
+116            android:excludeFromRecents="true"
+116-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:47:13-46
+117            android:exported="true"
+117-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:48:13-36
+118            android:launchMode="singleTask"
+118-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:49:13-44
+119            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+119-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:50:13-72
+120            <intent-filter>
+120-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:51:13-61:29
+121                <action android:name="android.intent.action.VIEW" />
+121-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:17-69
+121-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:34:25-66
+122
+123                <category android:name="android.intent.category.DEFAULT" />
+123-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:17-76
+123-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:36:27-73
+124                <category android:name="android.intent.category.BROWSABLE" />
+124-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:17-78
+124-->[com.google.firebase:firebase-auth:21.0.7] /Users/macbookair/.gradle/caches/transforms-3/02c497e756474e863ee56d684173b354/transformed/jetified-firebase-auth-21.0.7/AndroidManifest.xml:37:27-75
+125
+126                <data
+126-->[:file_picker] /Users/macbookair/Documents/ludu game/betting-ludo-cricket/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-44
+127                    android:host="firebase.auth"
+128                    android:path="/"
+129                    android:scheme="recaptcha" />
+130            </intent-filter>
+131        </activity>
+132
+133        <provider
+133-->[com.google.firebase:firebase-common:20.1.1] /Users/macbookair/.gradle/caches/transforms-3/60cb43b41827ac5833e6ffb9297cb895/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:26:9-31:39
+134            android:name="com.google.firebase.provider.FirebaseInitProvider"
+134-->[com.google.firebase:firebase-common:20.1.1] /Users/macbookair/.gradle/caches/transforms-3/60cb43b41827ac5833e6ffb9297cb895/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:27:13-77
+135            android:authorities="com.example.beting_app.firebaseinitprovider"
+135-->[com.google.firebase:firebase-common:20.1.1] /Users/macbookair/.gradle/caches/transforms-3/60cb43b41827ac5833e6ffb9297cb895/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:28:13-72
+136            android:directBootAware="true"
+136-->[com.google.firebase:firebase-common:20.1.1] /Users/macbookair/.gradle/caches/transforms-3/60cb43b41827ac5833e6ffb9297cb895/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:29:13-43
+137            android:exported="false"
+137-->[com.google.firebase:firebase-common:20.1.1] /Users/macbookair/.gradle/caches/transforms-3/60cb43b41827ac5833e6ffb9297cb895/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:30:13-37
+138            android:initOrder="100" />
+138-->[com.google.firebase:firebase-common:20.1.1] /Users/macbookair/.gradle/caches/transforms-3/60cb43b41827ac5833e6ffb9297cb895/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:31:13-36
+139
+140        <activity
+140-->[com.google.android.gms:play-services-base:18.0.1] /Users/macbookair/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+141            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+141-->[com.google.android.gms:play-services-base:18.0.1] /Users/macbookair/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+142            android:exported="false"
+142-->[com.google.android.gms:play-services-base:18.0.1] /Users/macbookair/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+143            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+143-->[com.google.android.gms:play-services-base:18.0.1] /Users/macbookair/.gradle/caches/transforms-3/1a2cb69c9228e95e429c828957f3a3b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+144
+145        <meta-data
+145-->[com.google.android.gms:play-services-basement:18.0.0] /Users/macbookair/.gradle/caches/transforms-3/f0589360d9c02b2f33aa86e62a9e0782/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+146            android:name="com.google.android.gms.version"
+146-->[com.google.android.gms:play-services-basement:18.0.0] /Users/macbookair/.gradle/caches/transforms-3/f0589360d9c02b2f33aa86e62a9e0782/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+147            android:value="@integer/google_play_services_version" />
+147-->[com.google.android.gms:play-services-basement:18.0.0] /Users/macbookair/.gradle/caches/transforms-3/f0589360d9c02b2f33aa86e62a9e0782/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+148    </application>
+149
+150</manifest>
