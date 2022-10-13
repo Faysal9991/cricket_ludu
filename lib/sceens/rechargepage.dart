@@ -31,7 +31,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.teal,
-            title: Text("Recharge",
+            title: Text("Deposit",
                 style: GoogleFonts.oleoScript(color: Colors.white)),
           ),
           body: SingleChildScrollView(
@@ -74,7 +74,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
                                               border: InputBorder.none,
-                                              hintText: "Entre ammount",
+                                              hintText: "Enter amount",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -104,7 +104,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              hintText: "Entre number",
+                                              hintText: "Enter number",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -116,8 +116,14 @@ class _RechargeScreenState extends State<RechargeScreen> {
                   ,
               Text("নিচে দেওয়া নাম্বারটি পার্সোনাল নাম্বার।\n নাম্বার টি কপি করে সেন্ড মানি করুন",style: GoogleFonts.lato(color: Colors.black,
               fontSize: 9,fontWeight: FontWeight.w500)),
-              Text("039082909902",style: GoogleFonts.lato(color: Colors.black,
-              fontSize: 9,fontWeight: FontWeight.w500),),
+              InkWell(
+                onTap: (){
+
+                  Clipboard.setData(ClipboardData(text: "039082909902"));
+                },
+                child: Text("039082909902",style: GoogleFonts.lato(color: Colors.black,
+                fontSize: 9,fontWeight: FontWeight.bold),),
+              ),
           SizedBox(height: height*0.03,),
           
               Row(
@@ -135,7 +141,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                             textAlign: TextAlign.center,
                                              style: TextStyle(color: Colors.black),
                                             decoration: InputDecoration(
-                                              hintText: "Entre transaction number",
+                                              hintText: "Enter TRX ID",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -212,7 +218,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
                                               border: InputBorder.none,
-                                              hintText: "Entre ammount",
+                                              hintText: "Enter amount",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -242,7 +248,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              hintText: "Entre number",
+                                              hintText: "Enter number",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -254,8 +260,14 @@ class _RechargeScreenState extends State<RechargeScreen> {
                   ,
               Text("নিচে দেওয়া নাম্বারটি পার্সোনাল নাম্বার।\n নাম্বার টি কপি করে সেন্ড মানি করুন",style: GoogleFonts.lato(color: Colors.black,
               fontSize: 9,fontWeight: FontWeight.w500)),
-              Text("039082909902",style: GoogleFonts.lato(color: Colors.black,
-              fontSize: 9,fontWeight: FontWeight.w500),),
+                                InkWell(
+                                  onTap: (){
+
+                                    Clipboard.setData(ClipboardData(text: "039082909902"));
+                                  },
+                                  child: Text("039082909902",style: GoogleFonts.lato(color: Colors.black,
+                                      fontSize: 9,fontWeight: FontWeight.bold),),
+                                ),
           SizedBox(height: height*0.03,),
           
               Row(
@@ -272,7 +284,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                             textAlign: TextAlign.center,
                                              style: TextStyle(color: Colors.black),
                                             decoration: InputDecoration(
-                                              hintText: "Entre transaction number",
+                                              hintText: "Enter TRX ID",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -343,7 +355,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
                                               border: InputBorder.none,
-                                              hintText: "Entre ammount",
+                                              hintText: "Enter amount",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -373,7 +385,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              hintText: "Entre number",
+                                              hintText: "Enter number",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -385,8 +397,14 @@ class _RechargeScreenState extends State<RechargeScreen> {
                   ,
               Text("নিচে দেওয়া নাম্বারটি পার্সোনাল নাম্বার।\n নাম্বার টি কপি করে সেন্ড মানি করুন",style: GoogleFonts.lato(color: Colors.black,
               fontSize: 9,fontWeight: FontWeight.w500)),
-              Text("039082909902",style: GoogleFonts.lato(color: Colors.white,
-              fontSize: 9,fontWeight: FontWeight.w500),),
+                                InkWell(
+                                  onTap: (){
+
+                                    Clipboard.setData(ClipboardData(text: "039082909902"));
+                                  },
+                                  child: Text("039082909902",style: GoogleFonts.lato(color: Colors.black,
+                                      fontSize: 9,fontWeight: FontWeight.bold),),
+                                ),
           SizedBox(height: height*0.03,),
           
               Row(
@@ -403,7 +421,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                             textAlign: TextAlign.center,
                                              style: TextStyle(color: Colors.black),
                                             decoration: InputDecoration(
-                                              hintText: "Entre transaction number",
+                                              hintText: "Enter TRX ID",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -472,7 +490,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
                                               border: InputBorder.none,
-                                              hintText: "Entre ammount",
+                                              hintText: "Enter amount",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -502,7 +520,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              hintText: "Entre number",
+                                              hintText: "Enter number",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -514,8 +532,14 @@ class _RechargeScreenState extends State<RechargeScreen> {
                   ,
               Text("নিচে দেওয়া নাম্বারটি পার্সোনাল নাম্বার।\n নাম্বার টি কপি করে সেন্ড মানি করুন",style: GoogleFonts.lato(color: Colors.black,
               fontSize: 9,fontWeight: FontWeight.w500)),
-              Text("039082909902",style: GoogleFonts.lato(color: Colors.black,
-              fontSize: 9,fontWeight: FontWeight.w500),),
+                                InkWell(
+                                  onTap: (){
+
+                                    Clipboard.setData(ClipboardData(text: "039082909902"));
+                                  },
+                                  child: Text("039082909902",style: GoogleFonts.lato(color: Colors.black,
+                                      fontSize: 9,fontWeight: FontWeight.bold),),
+                                ),
           SizedBox(height: height*0.03,),
           
               Row(
@@ -532,7 +556,7 @@ class _RechargeScreenState extends State<RechargeScreen> {
                                             textAlign: TextAlign.center,
                                              style: TextStyle(color: Colors.black),
                                             decoration: InputDecoration(
-                                              hintText: "Entre transaction number",
+                                              hintText: "Enter TRX ID",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               

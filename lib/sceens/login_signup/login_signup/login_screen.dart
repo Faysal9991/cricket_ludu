@@ -22,12 +22,10 @@ class LoginScreen extends StatelessWidget {
         final double h = MediaQuery.of(context).size.height;
     final double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.black,
     body: Stack(
       children:[
-      SizedBox(
-        height: h,
-        width: w,
-        child: Image.asset("assets/login.jpg",fit: BoxFit.cover,)),
+
 
         Center(
           child: Container(
@@ -64,13 +62,13 @@ class LoginScreen extends StatelessWidget {
                                 SizedBox(height: h*0.18,),
                                 const Text("স্বাগতম Jade Ai!",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),),
                                 SizedBox(height: h*0.06,),
-                                const Text("আপনার ফোন নম্বার",style: TextStyle(color: Color(0xffA5A3A3)),),
+                                const Text("Enter Gmail account",style: TextStyle(color: Color(0xffA5A3A3)),),
                                 SizedBox(height: h*0.02,),
                               LoginWidget( h: h*0.06, w: w*0.9,
                               child: TextFormField(
                                 controller: email,
                                  decoration: const InputDecoration(
-                        labelText: "Input Gmail",
+
                         contentPadding: EdgeInsets.all(20.0),
                         border: InputBorder.none,
                       
@@ -82,14 +80,14 @@ class LoginScreen extends StatelessWidget {
                 
                             
                                 
-                                const Text("পাসওয়ার্ড লিখুন",
+                                const Text("Enter Password",
                                 style:  TextStyle(color: Color(0xffA5A3A3)),),
                                 SizedBox(height: h*0.02,),
                                  LoginWidget( h: h*0.06, w: w*0.9,
                               child: TextFormField(
                                 controller: password,
                                  decoration: InputDecoration(
-                        labelText: "পাসওয়ার্ড লিখুন",
+
                         contentPadding: const EdgeInsets.all(20.0),
                         border: InputBorder.none,
                         suffixIcon: IconButton(onPressed: (){}, 
@@ -99,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               ),
                             SizedBox(height: h*0.02,),
-                                const Text("পাসওয়ার্ড ভুলে গেছেন?",style: TextStyle(color: Color(0xffA5A3A3)),),
+                                const Text("Forget password",style: TextStyle(color: Color(0xffA5A3A3)),),
                                 SizedBox(height: h*0.02,),
                                 SizedBox(
                     width: w*0.9,
@@ -110,19 +108,26 @@ class LoginScreen extends StatelessWidget {
                         final x = await fireBase.signinwithemailandpassword(email.text.trim(), password.text.trim());
                         if(x.user!=null){
                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>NavegationBar()));
+                        }else{
+                          final massage = SnackBar(content: Text("Email password didn't match"));
+                          ScaffoldMessenger.of(context).showSnackBar(massage);
+
                         }
 
-                      }, child: const Text("প্রবেশ করুন"))),
+                      }, child: const Text("Login"))),
                     SizedBox(height: h*0.02,),
                     Row(
                       children: [
-                         const Text("কোন একাউন্ট নেই?",style: TextStyle(color: Color(0xffA5A3A3)),),
+                         const Text("You don't have account?",style: TextStyle(color: Color(0xffA5A3A3)),),
                          const Spacer(),
-                         InkWell(
-                          onTap: (){
-                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>SignUpScreen()));
-                          },
-                          child: const Text("এখান থেকে একাউন্ট  খুলুন।",style: TextStyle(color: Colors.white),))
+                         Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: InkWell(
+                            onTap: (){
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                            },
+                            child: const Text("open a new account",style: TextStyle(color: Colors.white),)),
+                         )
                       ],
                     ),
                     Padding(

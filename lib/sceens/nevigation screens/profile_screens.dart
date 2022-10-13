@@ -69,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
                         style: GoogleFonts.actor(color: Colors.black87),
                       ),
                       Text(
-                        "UID or refarel id: ${snap.data!.uid}",
+                        "UID: ${snap.data!.uid}",
                         style: GoogleFonts.actor(color: Colors.black87),
                       ),
                       Row(

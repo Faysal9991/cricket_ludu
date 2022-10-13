@@ -35,7 +35,7 @@ class BetingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height * 0.24,
+      height: height * 0.25,
       width: width,
       decoration: BoxDecoration(
           color: const Color(0xffEBFCED),
@@ -180,11 +180,17 @@ class BetingCard extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
-                  height: height * 0.04,
-                  width: width * 0.8,
-                  child:
-                      ElevatedButton(onPressed:joinButtun, child: const Text("Join now")))
+              Row(
+                children: [
+                  SizedBox(
+                      height: height * 0.04,
+                      width: width * 0.6,
+                      child:
+                          ElevatedButton(onPressed:joinButtun, child:  Text(joinButtun==null?"Slot full":"Join now"))),
+                  TextButton(onPressed: (){}, child: Text("Room ID"))
+                ],
+              ),
+
             ],
           )
         ],

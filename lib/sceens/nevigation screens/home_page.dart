@@ -226,7 +226,7 @@ class HomePage extends StatelessWidget {
                         Get.to(ScreenSortUplod());
                       },
                       child: Text(
-                        "Screensort Upold",
+                        "Screenshot Upload",
                         style: GoogleFonts.lato(color: Colors.white),
                       )),
                 ),

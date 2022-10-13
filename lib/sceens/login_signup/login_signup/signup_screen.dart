@@ -19,6 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
    TextEditingController name = TextEditingController();
+  TextEditingController rafercode = TextEditingController();
 
   FireBase fireBase = FireBase();
 
@@ -70,13 +71,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               SizedBox(height: h*0.1,),
                               const Text("Please Fill the  filed and opne new account",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),),
                               SizedBox(height: h*0.06,),
-                              const Text("Input your Gmail",style: TextStyle(color: Color(0xffA5A3A3)),),
+
                               SizedBox(height: h*0.02,),
                               LoginWidget( h: h*0.06, w: w*0.9,
                                 child: TextFormField(
-                                  controller: email,
+controller: name,
                                   decoration:  InputDecoration(
-                                    hintText: "Input Gmail",
+                                    hintText: "Enter your full name",
+                                    hintStyle: TextStyle(color: Colors.white),
                                     contentPadding: EdgeInsets.all(20.0),
                                     border: InputBorder.none,
 
@@ -87,10 +89,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               SizedBox(height: h*0.02,),
   LoginWidget( h: h*0.06, w: w*0.9,
                                 child: TextFormField(
-                                  controller: name,
+                                  controller: email,
                                   
                                   decoration: InputDecoration(
-                  hintText: "Input your fast name",
+                  hintText: "Enter your Gmail",
+                                    hintStyle: TextStyle(color: Colors.white),
                                       contentPadding: const EdgeInsets.all(20.0),
                                       border: InputBorder.none,
                                     
@@ -100,27 +103,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                              SizedBox(height: h*0.02,),
                              LoginWidget( h: h*0.06, w: w*0.9,
                                 child: TextFormField(
-                                 controller: name,
+                  controller: rafercode,
                                   decoration: InputDecoration(
 
-                                      hintText: "Input your last name",
+                                      hintText: "Refer code",
+                                    hintStyle: TextStyle(color: Colors.white),
                                       contentPadding: const EdgeInsets.all(20.0),
                                       border: InputBorder.none,
                                     
                                   ),
                                 ),
                               ),
-                             SizedBox(height: h*0.02,),
-
-                              const Text("পাসওয়ার্ড লিখুন",
-                                style:  TextStyle(color: Color(0xffA5A3A3)),),
                               SizedBox(height: h*0.02,),
                               LoginWidget( h: h*0.06, w: w*0.9,
                                 child: TextFormField(
                                   controller: password,
                                   decoration: InputDecoration(
 
-                                      hintText: "পাসওয়ার্ড লিখুন",
+                                      hintText: "Enter your password",
+                                      hintStyle: TextStyle(color: Colors.white),
                                       contentPadding: const EdgeInsets.all(20.0),
                                       border: InputBorder.none,
                                       suffixIcon: IconButton(onPressed: (){},
@@ -135,21 +136,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   width: w*0.9,
                                   child: ElevatedButton(
                                       onPressed: ()async{
+
                                         final x = await fireBase.signUpWithEmailAndPassword(email.text.trim(), password.text.trim(), name.text.trim());
+                                        if(rafercode.text.trim()==x.user){
+
+                                        }
                                         if(x.user!=null){
                                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>NavegationBar()));
                                         }
-                                      }, child: const Text("একাউন্ট খুলুন "))),
+                                      }, child: const Text("Register account"))),
                               SizedBox(height: h*0.02,),
                               Row(
                                 children: [
-                                  const Text("একাউন্ট আছে?",style: TextStyle(color: Color(0xffA5A3A3)),),
+                                  const Text("Do you have account?",style: TextStyle(color: Color(0xffA5A3A3)),),
                                   const Spacer(),
-                                  InkWell(
-                                      onTap: (){
-                                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>LoginScreen()));
-                                      },
-                                      child: const Text("লগ ইন করুন ।",style: TextStyle(color: Colors.white),))
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: InkWell(
+                                        onTap: (){
+                                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>LoginScreen()));
+                                        },
+                                        child: const Text("Login",style: TextStyle(color: Colors.teal),)),
+                                  )
                                 ],
                               ),
                               Padding(

@@ -47,19 +47,20 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                       showDialog(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                    title: const Text("Bkash Deposit option"),
+                    title: const Text("Bkash Withdraw option"),
                   
                     actions:[
                          Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
                               children: [
+
                                 SizedBox(height: height*0.03,),
                                 Text("",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.bold),),
                                SizedBox(height: height*0.03,),
                                 Row(
                                   children: [
-                                      Text("মিনিমাম withdraw ৳200",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500),),
+                                      Text("মিনিমাম withdraw ৳100",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500),),
                                       Container(
                                         height: height*0.03,
                                         width: width*0.4,
@@ -75,8 +76,8 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              border: InputBorder.none,
-                                              hintText: "Entre ammount",
+
+                                              hintText: "Enter amount",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -107,7 +108,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              hintText: "Entre number",
+                                              hintText: "Bkash number",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -117,7 +118,10 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                   ],
                                 )
                   ,
-             
+SizedBox(height: height*0.01,),
+                                Text("আপনার দেওয়া নাম্বার টি সঠিক কিনা তা ভালো করে চেক করে, তারপর সাবমিট বাটনে ক্লিক করুন",style: TextStyle(
+                                  fontSize: 9
+                                ),),
           
                   ElevatedButton(onPressed: ()async{
                     WithdrawModel withdraw = WithdrawModel(uid: fireBase.cu!.uid, amount: double.parse(amount.text.trim()),number: phone.text.trim());
@@ -126,8 +130,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Withdraw request added")));
 
 
-                  }, child: const Text("Submit"))
-                  
+                  }, child: const Text("Submit")),
                               ],
                             ),
                           ),
@@ -162,7 +165,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                       showDialog(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                    title: const Text("Nogod Deposit option"),
+                    title: const Text("Nogod Withdraw option"),
                   
                     actions:[
                          Padding(
@@ -174,7 +177,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                SizedBox(height: height*0.03,),
                                 Row(
                                   children: [
-                                      Text("মিনিমাম withdraw ৳20",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500),),
+                                      Text("মিনিমাম withdraw ৳100",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500),),
                                       Container(
                                         height: height*0.03,
                                         width: width*0.4,
@@ -190,7 +193,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
                                               border: InputBorder.none,
-                                              hintText: "Entre ammount",
+                                              hintText: "Enter amount",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -220,7 +223,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              hintText: "Entre number",
+                                              hintText: "Nogod number",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -230,8 +233,12 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                   ],
                                 )
                   ,
-             
-          
+
+
+                           SizedBox(height: height*0.01,),
+                      Text("আপনার দেওয়া নাম্বার টি সঠিক কিনা তা ভালো করে চেক করে, তারপর সাবমিট বাটনে ক্লিক করুন",style: TextStyle(
+                          fontSize: 9
+                      ),),
              
                   ElevatedButton(onPressed: (){}, child: const Text("Submit"))
                   
@@ -269,7 +276,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                       showDialog(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                    title: const Text("Rocket Deposit option"),
+                    title: const Text("Rocket withdraw option"),
                   
                     actions:[
                          Padding(
@@ -280,7 +287,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                SizedBox(height: height*0.03,),
                                 Row(
                                   children: [
-                                      Text("মিনিমাম withdraw ৳20",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500),),
+                                      Text("মিনিমাম withdraw ৳100",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500),),
                                       Container(
                                         height: height*0.03,
                                         width: width*0.4,
@@ -296,7 +303,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
                                               border: InputBorder.none,
-                                              hintText: "Entre ammount",
+                                              hintText: "Enter amount",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -326,7 +333,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              hintText: "Entre number",
+                                              hintText: "Rocket number",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -336,8 +343,12 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                   ],
                                 )
                   ,
-           
-          SizedBox(height: height*0.03,),
+
+
+                                SizedBox(height: height*0.01,),
+                                Text("আপনার দেওয়া নাম্বার টি সঠিক কিনা তা ভালো করে চেক করে, তারপর সাবমিট বাটনে ক্লিক করুন",style: TextStyle(
+                                    fontSize: 9
+                                ),),
           
           
                   ElevatedButton(onPressed: (){}, child: const Text("Submit"))
@@ -375,7 +386,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                       showDialog(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                    title: const Text("Upay Deposit option"),
+                    title: const Text("Upay Withdraw option"),
                   
                     actions:[
                          Padding(
@@ -387,7 +398,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                SizedBox(height: height*0.03,),
                                 Row(
                                   children: [
-                                      Text("মিনিমাম withdraw ৳20",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500),),
+                                      Text("মিনিমাম withdraw ৳100",style: GoogleFonts.lato(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500),),
                                       Container(
                                         height: height*0.03,
                                         width: width*0.4,
@@ -403,7 +414,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
                                               border: InputBorder.none,
-                                              hintText: "Entre ammount",
+                                              hintText: "Enter amount",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -433,7 +444,7 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                             textAlign: TextAlign.center,
                                              style: const TextStyle(color: Colors.black),
                                             decoration: const InputDecoration(
-                                              hintText: "Entre number",
+                                              hintText: "Upay number",
                                               hintStyle: TextStyle(color: Colors.black)
                                             ),
               
@@ -443,7 +454,10 @@ class _WithDrawRequestState extends State<WithDrawRequest> {
                                   ],
                                 )
                   ,
-            
+                           SizedBox(height: height*0.01,),
+                      Text("আপনার দেওয়া নাম্বার টি সঠিক কিনা তা ভালো করে চেক করে, তারপর সাবমিট বাটনে ক্লিক করুন",style: TextStyle(
+                          fontSize: 9
+                      ),),
                   ElevatedButton(onPressed: (){}, child: const Text("Submit"))
                   
                               ],

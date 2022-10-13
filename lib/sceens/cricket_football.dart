@@ -1,4 +1,5 @@
 import 'package:beting_app/Helper/fbase.dart';
+import 'package:beting_app/models/cricket_football.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -93,8 +94,7 @@ class _CricketFootballScreenState extends State<CricketFootballScreen> {
                                   itemCount: snap.data!.length,
                                   itemBuilder: (context, index) {
                                     GameModel game = snap.data![index];
-                                    String game1 = game.name!.split("-").first;
-                                    String game2 = game.name!.split("-")[1];
+
 
                                     return Padding(
                                       padding: const EdgeInsets.all(8.0),
@@ -125,7 +125,7 @@ class _CricketFootballScreenState extends State<CricketFootballScreen> {
 
                   )),
                ),
-               Text("${game.entryFee}",style: GoogleFonts.alike(
+               Text("1.5",style: GoogleFonts.alike(
                 fontSize: 15,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -152,7 +152,7 @@ class _CricketFootballScreenState extends State<CricketFootballScreen> {
                 )),
                Padding(
                 padding:  EdgeInsets.only(right: width*0.04),
-                 child: Text("${game.entryFee}",style: GoogleFonts.alike(
+                 child: Text("1.5",style: GoogleFonts.alike(
                   fontSize: 15,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -200,6 +200,9 @@ class _CricketFootballScreenState extends State<CricketFootballScreen> {
                                                              color: Colors.white,
                                                              child: TextField(
                                                                controller: amount,
+                                                               onChanged: (s){
+                                                                 st((){});
+                                                               },
                                                                keyboardType: TextInputType.number,
                                                                decoration: InputDecoration(
                                                                  hintText: "Enter your bet",
@@ -218,7 +221,7 @@ class _CricketFootballScreenState extends State<CricketFootballScreen> {
 
                                                            ),*/
                                                          ),
-                                                         Text("Potential wingings \$50.9",style: GoogleFonts.lato(color: Colors.white),),
+                                                         Text("Potential wingings ৳ ${amount.text.isEmpty?0:double.parse(amount.text.trim())*1.5}",style: GoogleFonts.lato(color: Colors.white),),
                                                          Padding(
                                                            padding: const EdgeInsets.all(8.0),
                                                            child: Container(

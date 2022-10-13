@@ -15,7 +15,16 @@ class GameModel{
   DateTime? start;
   DateTime? end;
 
-  GameModel({this.name, this.boardType, this.slotonecapacity, this.slottwocapacity, this.entryFee, this.winingPrize, this.winner, this.start, this.end});
+  GameModel({
+    this.name,
+    this.boardType,
+    this.slotonecapacity,
+    this.slottwocapacity,
+    this.entryFee,
+    this.winingPrize,
+    this.winner,
+    this.start,
+    this.end});
 
   Map<String, dynamic> toJson()=>{
     "uid":uid,

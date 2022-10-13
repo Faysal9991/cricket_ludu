@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:beting_app/models/cricket_football.dart';
 import 'package:beting_app/models/gamemodel.dart';
 import 'package:beting_app/models/profilemodel.dart';
 import 'package:beting_app/models/withdrawmodel.dart';
@@ -45,6 +46,13 @@ class FireBase{
 
 
   }
+  Future<bool> joinCricketFootballGame(CricketFootball cricket_football, ProfileModel profileModel)async{
+
+    // profileModel.totalBalance=profileModel.totalBalance!-gameModel.entryFee!;
+    final cricket = await store.collection("cricket_football").doc(cricket_football.uid).update(cricket_football.toJson()).onError((error, stackTrace) => false);
+    final profile = await store.collection("profile").doc(profileModel.uid).update(profileModel.toJson()).onError((error, stackTrace) => false);
+    return true;
+  }
 
   Future<String> uploadImage(File imageFile, String fileName) async{
     final x = await storage.ref("profile/$fileName").putFile(imageFile);
@@ -85,13 +93,7 @@ class FireBase{
     }).toList());
   }
 
-  Stream<List<GameModel>> allCricket(){
-    return store.collection("game").where("boardType", isEqualTo: "Cricket").snapshots().map((event) => event.docs.map((e) {
-      GameModel gameModel = GameModel.fromJson(e.data());
-      gameModel.uid = e.id;
-      return gameModel;
-    }).toList());
-  }
+
   
   Stream<List<GameModel>> allgames(){
     return store.collection("game").snapshots().map((event) => event.docs.map((e) {

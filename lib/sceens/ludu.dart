@@ -100,7 +100,8 @@ class _LuduScreenState extends State<LuduScreen> {
                                          entryFee: "${game.entryFee} BDT",
                                          matchType: "${game.slotonecapacity} vs ${game.slottwocapacity}",
                                          matchStart: "${game.start}",
-                                         matchEnd: "${game.end}",
+                                         matchEnd: "${(game.slotonecapacity!+game.slottwocapacity!)-(game.slotoneusers.length+game.slottwousers.length)}",
+
                                          bordType: "${game.boardType}",
                                          joinButtun: game.slotoneusers.contains(profileModel.uid)||game.slottwousers.contains(profileModel.uid)||(game.slotonecapacity!<=game.slotoneusers.length&&game.slottwocapacity!<=game.slottwousers.length)?null:()async{
                                           if(profileModel.totalBalance!>=game.entryFee!){
