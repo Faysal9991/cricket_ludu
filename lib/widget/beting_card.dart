@@ -18,6 +18,7 @@ class BetingCard extends StatelessWidget {
       required this.matchStart,
       required this.matchEnd,
       required this.joinButtun,
+      required this.isVisible,
       required this.roomID})
       : super(key: key);
 
@@ -33,6 +34,7 @@ class BetingCard extends StatelessWidget {
   final String matchEnd;
   final String? matchDate;
   final String? roomID;
+  final bool? isVisible;
   final VoidCallback? joinButtun;
 
   @override
@@ -179,17 +181,19 @@ class BetingCard extends StatelessWidget {
                       height: height * 0.04,
                       width: width * 0.6,
                       child: ElevatedButton(onPressed: joinButtun, child: Text(joinButtun == null ? "Slot full" : "Join now"))),
-                  TextButton(
-                      onPressed: () {
-                        if (roomID!.isEmpty) {
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Please Wait..')));
-                        } else {
-                          Clipboard.setData(ClipboardData(text: roomID)).then((value) {
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Copy to clipboard successfully')));
-                          });
-                        }
-                      },
-                      child: Text("Room ID"))
+                  isVisible!
+                      ? TextButton(
+                          onPressed: () {
+                            if (roomID!.isEmpty) {
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please Wait..')));
+                            } else {
+                              Clipboard.setData(ClipboardData(text: roomID)).then((value) {
+                                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Copy to clipboard successfully')));
+                              });
+                            }
+                          },
+                          child: const Text("Room ID"))
+                      : const SizedBox.shrink()
                 ],
               ),
             ],

@@ -1,11 +1,9 @@
 import 'package:beting_app/Helper/fbase.dart';
 import 'package:beting_app/models/profilemodel.dart';
 import 'package:flutter/material.dart';
-
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-
 import '../Helper/style.dart';
 import '../models/gamemodel.dart';
 import '../widget/beting_card.dart';
@@ -104,6 +102,9 @@ class _LuduScreenState extends State<LuduScreen> {
                                       "${(game.slotonecapacity! + game.slottwocapacity!) - (game.slotoneusers.length + game.slottwousers.length)}",
                                   bordType: "${game.boardType}",
                                   roomID: game.roomID,
+                                  isVisible: (game.slotoneusers.contains(profileModel.uid) || game.slottwousers.contains(profileModel.uid))
+                                      ? true
+                                      : false,
                                   joinButtun: game.slotoneusers.contains(profileModel.uid) ||
                                           game.slottwousers.contains(profileModel.uid) ||
                                           (game.slotonecapacity! <= game.slotoneusers.length &&
